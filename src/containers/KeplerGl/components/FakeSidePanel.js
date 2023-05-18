@@ -2,6 +2,9 @@ import {useEffect, useState} from "react";
 import {Button, Card, Input, List, Modal, Skeleton, Space, Tabs} from "antd";
 import {ReactComponent as Show} from "../../../images/show.svg"
 import {ReactComponent as Hidden} from "../../../images/hidden.svg"
+import {ReactComponent as Layers} from "../../../images/layers.svg"
+import {ReactComponent as Route} from "../../../images/route.svg"
+import {ReactComponent as Store} from "../../../images/store.svg"
 import Icon, {EditOutlined, DeleteOutlined} from "@ant-design/icons"
 
 export function FakeSidePanel() {
@@ -74,17 +77,19 @@ export function FakeSidePanel() {
                 <List.Item
                     actions={[
                         // <a key="list-loadmore-edit" onClick={() => handleEdit(index)}>编辑</a>,
-                        <EditOutlined onClick={() => handleEdit(index)} title="编辑"/>,
+                        <EditOutlined onClick={() => handleEdit(index)} title="编辑" style={{color: "#fdfdfd"}}/>,
                         // <a key="list-loadmore-edit">显示</a>,
-                        item.show? <Icon component={Show} title="隐藏" onClick={() => onClickShow(index, false)}/> : <Icon component={Hidden} title="显示" onClick={() => onClickShow(index, true)}/>,
+                        item.show?
+                            <Icon component={Show} title="隐藏" onClick={() => onClickShow(index, false)} style={{color: "#fdfdfd"}}/>
+                            : <Icon component={Hidden} title="显示" onClick={() => onClickShow(index, true)} style={{color: "#fdfdfd"}}/>,
                         // <a key="list-loadmore-more" onClick={deleteLayers}>删除</a>
-                        <DeleteOutlined onClick={() => deleteLayers(index)} title="删除"/>,
+                        <DeleteOutlined onClick={() => deleteLayers(index)} title="删除" style={{color: "#fdfdfd"}}/>,
                     ]}
                 >
                     <Skeleton avatar title={false} loading={false} active>
                         <List.Item.Meta style={{textAlign: "left"}}
                             // avatar={<Avatar src={item.picture.large} />}
-                            title={<span>{item.title}</span>}
+                            title={<span style={{color: "#fdfdfd"}}>{item.title}</span>}
                             // description={item.description}
                         />
                     </Skeleton>
@@ -105,10 +110,10 @@ export function FakeSidePanel() {
     const renderMinRoute = () => {
         return <>
             <Space direction="vertical" align="start" size="small" style={{width: "100%", display: "flex"}}>
-                <span>起始地</span>
-                <Input placeholder="请输入起始地" style={{width: 350}}/>
-                <span>目的地</span>
-                <Input placeholder="请输入目的地" style={{width: 350}}/>
+                <span style={{color: "#fdfdfd"}}>起始地</span>
+                <Input placeholder="请输入起始地" style={{width: 394}}/>
+                <span style={{color: "#fdfdfd"}}>目的地</span>
+                <Input placeholder="请输入目的地" style={{width: 394}}/>
                 <Button type="primary" style={{float: "left"}}>查询</Button>
             </Space>
         </>
@@ -119,24 +124,11 @@ export function FakeSidePanel() {
     const renderStore = () => {
         return <>
             <Space direction="vertical" align="start" size="small" style={{width: "100%", display: "flex"}}>
-                <span>货物配送目的地</span>
-                <Input placeholder="请输入货物配送目的地" style={{width: 350}}/>
-                <span>推荐仓库数量</span>
-                <Input placeholder="请输入推荐仓库数量" style={{width: 350}}/>
+                <span style={{color: "#fdfdfd"}}>货物配送目的地</span>
+                <Input placeholder="请输入货物配送目的地" style={{width: 394}}/>
+                <span style={{color: "#fdfdfd"}}>推荐仓库数量</span>
+                <Input placeholder="请输入推荐仓库数量" style={{width: 394}}/>
                 <Button type="primary" style={{float: "left"}}>查询</Button>
-            </Space>
-        </>
-    }
-
-    // 仓库负责片区分析
-    const renderStoreArea = () => {
-        return <>
-            <Space direction="vertical" align="start" size="small" style={{width: "100%", display: "flex"}}>
-                <span>带划分区域</span>
-                <Input placeholder="请输入带划分区域" style={{width: 350}}/>
-                <span>选择负责该区域的仓库</span>
-                <Input placeholder="请输入选择负责该区域的仓库" style={{width: 350}}/>
-                <Button type="primary" style={{float: "left"}}>分析</Button>
             </Space>
         </>
     }
@@ -144,27 +136,27 @@ export function FakeSidePanel() {
 
     // FakeSidePanel控制
     const [visible, setVisible] = useState(true)
+
+    const [activeKey, setActiveKey] = useState("1")
+    const onChangeActiveKey = (value) => {
+        setActiveKey(value)
+    }
     const items = [
         {
             key: '1',
-            label: `数据预览`,
+            label: <div style={{color: activeKey === "1" ? "#1676fe": "#fdfdfd"}}><Icon component={Layers} style={{color: activeKey === "1" ? "#1676fe": "#fdfdfd"}}/>物流资源视图</div>,
             children: renderDataPreview(),
         },
         {
             key: '2',
-            label: `最短路径查询`,
+            label: <div style={{color: activeKey === "2" ? "#1676fe": "#fdfdfd"}}><Icon component={Route} style={{color: activeKey === "2" ? "#1676fe": "#fdfdfd"}}/>运输线路规划</div>,
             children: renderMinRoute(),
         },
         {
             key: '3',
-            label: `储存仓库推荐`,
+            label: <div style={{color: activeKey === "3" ? "#1676fe": "#fdfdfd"}}><Icon component={Store} style={{color: activeKey === "3" ? "#1676fe": "#fdfdfd"}}/>仓储仓库推荐</div>,
             children: renderStore(),
-        },
-        {
-            key: '4',
-            label: `仓库负责片区分析`,
-            children: renderStoreArea(),
-        },
+        }
     ];
 
     useEffect(() => {
@@ -180,23 +172,31 @@ export function FakeSidePanel() {
 
     return <>
         {visible && <Card
-            title= "智慧物流分析系统"
+            title= "科捷智慧物流分析"
             style={{
                 position: "fixed",
                 zIndex: 99,
-                left: 16,
-                top: 16,
-                width: 400,
-                height: window.innerHeight - 32,
-                background: "#ffffff",
+                left: 0,
+                top: 0,
+                width: 442,
+                height: window.innerHeight,
+                background: "#242731",
                 boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+                color: "#fdfdfe",
+                borderRadius: 0
             }}
+            bordered={false}
             bodyStyle={{
-                marginTop: 0,
-                paddingTop: 0
+                paddingTop: 0,
+                border: 0
+            }}
+            headStyle={{
+                background: "#29323d",
+                color: "#fdfdfd",
+                border: 0
             }}
         >
-            <Tabs defaultActiveKey="1" items={items}/>
+            <Tabs activeKey={activeKey} onChange={onChangeActiveKey} items={items}/>
         </Card>}
     </>
 }
