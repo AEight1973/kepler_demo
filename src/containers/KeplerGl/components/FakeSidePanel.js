@@ -78,7 +78,7 @@ export function FakeSidePanel() {
                         // <a key="list-loadmore-edit">显示</a>,
                         item.show? <Icon component={Show} title="隐藏" onClick={() => onClickShow(index, false)}/> : <Icon component={Hidden} title="显示" onClick={() => onClickShow(index, true)}/>,
                         // <a key="list-loadmore-more" onClick={deleteLayers}>删除</a>
-                        <DeleteOutlined onClick={deleteLayers} title="删除"/>,
+                        <DeleteOutlined onClick={() => deleteLayers(index)} title="删除"/>,
                     ]}
                 >
                     <Skeleton avatar title={false} loading={false} active>
