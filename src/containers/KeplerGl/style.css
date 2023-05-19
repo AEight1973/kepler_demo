@@ -1,3 +1,18 @@
-.map-control {
-    display: none !important
+/*.map-control {*/
+/*    display: none !important*/
+/*}*/
+.mapbox-attribution-container {
+    display: none !important;
+}
+.split-map {
+    display: none !important;
+}
+.show-legend {
+    display: none !important;
+}
+.map-draw-controls {
+    display: none !important;
+}
+.map-locale-controls {
+    display: none !important;
 }
