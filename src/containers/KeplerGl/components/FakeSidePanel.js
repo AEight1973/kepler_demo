@@ -145,17 +145,23 @@ export function FakeSidePanel() {
     const items = [
         {
             key: '1',
-            label: <div style={{color: activeKey === "1" ? "#fdfdfd": "#697385"}}><Icon component={Layers} style={{color: activeKey === "1" ? "#fdfdfd": "#697385"}}/>物流资源视图</div>,
+            label: <div style={{color: activeKey === "1" ? "#fdfdfd": "#697385"}}>
+                <Icon component={Layers} style={{color: activeKey === "1" ? "#fdfdfd": "#697385"}}/>
+                物流资源视图</div>,
             children: renderDataPreview(),
         },
         {
             key: '2',
-            label: <div style={{color: activeKey === "2" ? "#fdfdfd": "#697385"}}><Icon component={Route} style={{color: activeKey === "2" ? "#fdfdfd": "#697385"}}/>运输线路规划</div>,
+            label: <div style={{color: activeKey === "2" ? "#fdfdfd": "#697385"}}>
+                <Icon component={Route} style={{color: activeKey === "2" ? "#fdfdfd": "#697385"}}/>
+                运输线路规划</div>,
             children: renderMinRoute(),
         },
         {
             key: '3',
-            label: <div style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}><Icon component={Store} style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}/>仓储仓库推荐</div>,
+            label: <div style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}>
+                <Icon component={Store} style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}/>
+                仓储仓库推荐</div>,
             children: renderStore(),
         }
     ];
@@ -201,6 +207,7 @@ export function FakeSidePanel() {
                 activeKey={activeKey}
                 onChange={onChangeActiveKey}
                 items={items}
+                size="middle"
             />
         </Card>}
     </>
