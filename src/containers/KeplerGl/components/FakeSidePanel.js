@@ -6,6 +6,7 @@ import {ReactComponent as Layers} from "../../../images/layers.svg"
 import {ReactComponent as Route} from "../../../images/route.svg"
 import {ReactComponent as Store} from "../../../images/store.svg"
 import Icon, {EditOutlined, DeleteOutlined} from "@ant-design/icons"
+import "./index.css"
 
 export function FakeSidePanel() {
 
@@ -144,17 +145,17 @@ export function FakeSidePanel() {
     const items = [
         {
             key: '1',
-            label: <div style={{color: activeKey === "1" ? "#1676fe": "#fdfdfd"}}><Icon component={Layers} style={{color: activeKey === "1" ? "#1676fe": "#fdfdfd"}}/>物流资源视图</div>,
+            label: <div style={{color: activeKey === "1" ? "#fdfdfd": "#697385"}}><Icon component={Layers} style={{color: activeKey === "1" ? "#fdfdfd": "#697385"}}/>物流资源视图</div>,
             children: renderDataPreview(),
         },
         {
             key: '2',
-            label: <div style={{color: activeKey === "2" ? "#1676fe": "#fdfdfd"}}><Icon component={Route} style={{color: activeKey === "2" ? "#1676fe": "#fdfdfd"}}/>运输线路规划</div>,
+            label: <div style={{color: activeKey === "2" ? "#fdfdfd": "#697385"}}><Icon component={Route} style={{color: activeKey === "2" ? "#fdfdfd": "#697385"}}/>运输线路规划</div>,
             children: renderMinRoute(),
         },
         {
             key: '3',
-            label: <div style={{color: activeKey === "3" ? "#1676fe": "#fdfdfd"}}><Icon component={Store} style={{color: activeKey === "3" ? "#1676fe": "#fdfdfd"}}/>仓储仓库推荐</div>,
+            label: <div style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}><Icon component={Store} style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}/>仓储仓库推荐</div>,
             children: renderStore(),
         }
     ];
@@ -188,7 +189,7 @@ export function FakeSidePanel() {
             bordered={false}
             bodyStyle={{
                 paddingTop: 0,
-                border: 0
+                border: 0,
             }}
             headStyle={{
                 background: "#29323d",
@@ -196,7 +197,11 @@ export function FakeSidePanel() {
                 border: 0
             }}
         >
-            <Tabs activeKey={activeKey} onChange={onChangeActiveKey} items={items}/>
+            <Tabs
+                activeKey={activeKey}
+                onChange={onChangeActiveKey}
+                items={items}
+            />
         </Card>}
     </>
 }

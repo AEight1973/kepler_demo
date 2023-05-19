@@ -1,0 +1,6 @@
+.ant-tabs .ant-tabs-ink-bar {
+    background: #fdfdfd;
+}
+.ant-tabs .ant-tabs-nav::before {
+    border-bottom-color: #697385;
+}

@@ -1,12 +1,23 @@
 import React from 'react';
 import { Map } from "../KeplerGl";
 import './style.css';
+import {ConfigProvider, theme} from "antd";
 
 function App() {
   return (
-    <div className="App">
-        <Map></Map>
-    </div>
+      <ConfigProvider
+          theme={{
+              // algorithm: theme.darkAlgorithm,
+              token: {
+                colorPrimary: "#697385"
+              }
+          }}
+      >
+          <div className="App">
+              <Map></Map>
+          </div>
+      </ConfigProvider>
+
   )
 }
 
