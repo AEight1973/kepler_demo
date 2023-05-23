@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Button, Card, Input, List, Modal, Skeleton, Space, Tabs} from "antd";
+import {Button, Card, Input, List, Modal, Space, Tabs} from "antd";
 import {ReactComponent as Show} from "../../../images/show.svg"
 import {ReactComponent as Hidden} from "../../../images/hidden.svg"
 import {ReactComponent as Layers} from "../../../images/layers.svg"
