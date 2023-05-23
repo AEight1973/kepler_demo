@@ -1,7 +1,7 @@
 import React from 'react';
 import { Map } from "../KeplerGl";
 import './style.css';
-import {ConfigProvider, theme} from "antd";
+import {ConfigProvider} from "antd";
 
 function App() {
   return (

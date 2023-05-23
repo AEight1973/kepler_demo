@@ -98,11 +98,11 @@ export function FakeSidePanel() {
             )}
             />
             <Button type="primary" style={{float: "left"}} onClick={handleAdd}>加载数据</Button>
-            <Modal title="新增图层" open={openAdd} onOk={addLayers} onCancel={() => setOpenAdd(false)}>
-                <Input value={layerName} onChange={onChangeLayerName} placeholder="请输入图层名称"/>
+            <Modal title="加载数据" open={openAdd} onOk={addLayers} onCancel={() => setOpenAdd(false)} cancelText="取消" okText="确认">
+                <Input value={layerName} onChange={onChangeLayerName} placeholder="请输入数据类型名称"/>
             </Modal>
-            <Modal title="修改图层" open={openEdit} onOk={editLayers} onCancel={() => setOpenEdit(false)}>
-                <Input value={layerName} onChange={onChangeLayerName} placeholder="请输入图层名称"/>
+            <Modal title="修改数据" open={openEdit} onOk={editLayers} onCancel={() => setOpenEdit(false)} cancelText="取消" okText="确认">
+                <Input value={layerName} onChange={onChangeLayerName} placeholder="请输入数据类型名称"/>
             </Modal>
         </>
     }
@@ -129,7 +129,7 @@ export function FakeSidePanel() {
                 <Input placeholder="请输入货物配送目的地" style={{width: 394}}/>
                 <span style={{color: "#fdfdfd"}}>推荐仓库数量</span>
                 <Input placeholder="请输入推荐仓库数量" style={{width: 394}}/>
-                <Button type="primary" style={{float: "left"}}>查询</Button>
+                <Button type="primary" style={{float: "left"}}>分析</Button>
             </Space>
         </>
     }
@@ -161,7 +161,7 @@ export function FakeSidePanel() {
             key: '3',
             label: <div style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}>
                 <Icon component={Store} style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}/>
-                仓储仓库推荐</div>,
+                仓储资源推荐</div>,
             children: renderStore(),
         }
     ];
@@ -179,7 +179,7 @@ export function FakeSidePanel() {
 
     return <>
         {visible && <Card
-            title= "科捷智慧物流分析"
+            title= "科捷物流智能分析"
             style={{
                 position: "fixed",
                 zIndex: 99,
@@ -199,8 +199,9 @@ export function FakeSidePanel() {
             }}
             headStyle={{
                 background: "#29323d",
-                color: "#fdfdfd",
-                border: 0
+                color: "#20adc8",
+                border: 0,
+                fontSize: 30
             }}
         >
             <Tabs
