@@ -4,3 +4,6 @@
 .ant-tabs .ant-tabs-nav::before {
     border-bottom-color: #697385;
 }
+.ant-list-item {
+    border-block-end: 1px solid #373A45 !important;
+}

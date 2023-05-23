@@ -72,28 +72,21 @@ export function FakeSidePanel() {
     const renderDataPreview = () => {
         return <>
             <List
-            itemLayout="horizontal"
+            // itemLayout="horizontal"
             dataSource={layers}
+            split={true}
+            style={{borderBottomColor: '#ffffff'}}
             renderItem={(item, index) => (
                 <List.Item
                     actions={[
-                        // <a key="list-loadmore-edit" onClick={() => handleEdit(index)}>编辑</a>,
                         <EditOutlined onClick={() => handleEdit(index)} title="编辑" style={{color: "#fdfdfd"}}/>,
-                        // <a key="list-loadmore-edit">显示</a>,
                         item.show?
                             <Icon component={Show} title="隐藏" onClick={() => onClickShow(index, false)} style={{color: "#fdfdfd"}}/>
                             : <Icon component={Hidden} title="显示" onClick={() => onClickShow(index, true)} style={{color: "#fdfdfd"}}/>,
-                        // <a key="list-loadmore-more" onClick={deleteLayers}>删除</a>
                         <DeleteOutlined onClick={() => deleteLayers(index)} title="删除" style={{color: "#fdfdfd"}}/>,
                     ]}
                 >
-                    <Skeleton avatar title={false} loading={false} active>
-                        <List.Item.Meta style={{textAlign: "left"}}
-                            // avatar={<Avatar src={item.picture.large} />}
-                            title={<span style={{color: "#fdfdfd", fontWeight: "normal"}}>{item.title}</span>}
-                            // description={item.description}
-                        />
-                    </Skeleton>
+                    <span style={{color: "#fdfdfd", fontWeight: "normal"}}>{item.title}</span>
                 </List.Item>
             )}
             />

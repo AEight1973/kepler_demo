@@ -9,7 +9,8 @@ function App() {
           theme={{
               // algorithm: theme.darkAlgorithm,
               token: {
-                colorPrimary: "#697385"
+                  colorPrimary: "#697385",
+                  colorPrimaryHover: "#20adc8",
               }
           }}
       >
