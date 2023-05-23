@@ -90,14 +90,14 @@ export function FakeSidePanel() {
                     <Skeleton avatar title={false} loading={false} active>
                         <List.Item.Meta style={{textAlign: "left"}}
                             // avatar={<Avatar src={item.picture.large} />}
-                            title={<span style={{color: "#fdfdfd"}}>{item.title}</span>}
+                            title={<span style={{color: "#fdfdfd", fontWeight: "normal"}}>{item.title}</span>}
                             // description={item.description}
                         />
                     </Skeleton>
                 </List.Item>
             )}
             />
-            <Button type="primary" style={{float: "left"}} onClick={handleAdd}>加载数据</Button>
+            <Button type="primary" style={{float: "left", marginTop:15}} onClick={handleAdd}>加载数据</Button>
             <Modal title="加载数据" open={openAdd} onOk={addLayers} onCancel={() => setOpenAdd(false)} cancelText="取消" okText="确认">
                 <Input value={layerName} onChange={onChangeLayerName} placeholder="请输入数据类型名称"/>
             </Modal>
@@ -115,7 +115,7 @@ export function FakeSidePanel() {
                 <Input placeholder="请输入起始地" style={{width: 394}}/>
                 <span style={{color: "#fdfdfd"}}>目的地</span>
                 <Input placeholder="请输入目的地" style={{width: 394}}/>
-                <Button type="primary" style={{float: "left"}}>查询</Button>
+                <Button type="primary" style={{float: "left", marginTop:15}}>查询</Button>
             </Space>
         </>
     }
@@ -129,7 +129,7 @@ export function FakeSidePanel() {
                 <Input placeholder="请输入货物配送目的地" style={{width: 394}}/>
                 <span style={{color: "#fdfdfd"}}>推荐仓库数量</span>
                 <Input placeholder="请输入推荐仓库数量" style={{width: 394}}/>
-                <Button type="primary" style={{float: "left"}}>分析</Button>
+                <Button type="primary" style={{float: "left", marginTop:15}}>分析</Button>
             </Space>
         </>
     }
@@ -145,22 +145,22 @@ export function FakeSidePanel() {
     const items = [
         {
             key: '1',
-            label: <div style={{color: activeKey === "1" ? "#fdfdfd": "#697385"}}>
-                <Icon component={Layers} style={{color: activeKey === "1" ? "#fdfdfd": "#697385"}}/>
+            label: <div style={{color: activeKey === "1" ? "#20adc8": "#697385"}}>
+                <Icon component={Layers} style={{color: activeKey === "1" ? "#20adc8": "#697385"}}/>
                 物流资源视图</div>,
             children: renderDataPreview(),
         },
         {
             key: '2',
-            label: <div style={{color: activeKey === "2" ? "#fdfdfd": "#697385"}}>
-                <Icon component={Route} style={{color: activeKey === "2" ? "#fdfdfd": "#697385"}}/>
+            label: <div style={{color: activeKey === "2" ? "#20adc8": "#697385"}}>
+                <Icon component={Route} style={{color: activeKey === "2" ? "#20adc8": "#697385"}}/>
                 运输线路规划</div>,
             children: renderMinRoute(),
         },
         {
             key: '3',
-            label: <div style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}>
-                <Icon component={Store} style={{color: activeKey === "3" ? "#fdfdfd": "#697385"}}/>
+            label: <div style={{color: activeKey === "3" ? "#20adc8": "#697385"}}>
+                <Icon component={Store} style={{color: activeKey === "3" ? "#20adc8": "#697385"}}/>
                 仓储资源推荐</div>,
             children: renderStore(),
         }
