@@ -138,22 +138,22 @@ export function FakeSidePanel() {
     const items = [
         {
             key: '1',
-            label: <div style={{color: activeKey === "1" ? "#20adc8": "#697385"}}>
-                <Icon component={Layers} style={{color: activeKey === "1" ? "#20adc8": "#697385"}}/>
+            label: <div style={{color: activeKey === "1" ? "#FFD702": "#697385"}}>
+                <Icon component={Layers} style={{color: activeKey === "1" ? "#ffd702": "#697385"}}/>
                 物流资源视图</div>,
             children: renderDataPreview(),
         },
         {
             key: '2',
-            label: <div style={{color: activeKey === "2" ? "#20adc8": "#697385"}}>
-                <Icon component={Route} style={{color: activeKey === "2" ? "#20adc8": "#697385"}}/>
+            label: <div style={{color: activeKey === "2" ? "#ffd702": "#697385"}}>
+                <Icon component={Route} style={{color: activeKey === "2" ? "#ffd702": "#697385"}}/>
                 运输线路规划</div>,
             children: renderMinRoute(),
         },
         {
             key: '3',
-            label: <div style={{color: activeKey === "3" ? "#20adc8": "#697385"}}>
-                <Icon component={Store} style={{color: activeKey === "3" ? "#20adc8": "#697385"}}/>
+            label: <div style={{color: activeKey === "3" ? "#ffd702": "#697385"}}>
+                <Icon component={Store} style={{color: activeKey === "3" ? "#ffd702": "#697385"}}/>
                 仓储资源推荐</div>,
             children: renderStore(),
         }
